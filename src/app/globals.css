@@ -1,26 +1,130 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@plugin "tailwindcss-animate";
+
+@font-face {
+  font-family: 'MonaSans';
+  src: url('../../Mona-Sans.ttf') format('woff2'),
+
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+@font-face {
+  font-family: 'tsnf';
+  src: url('../../tsnf.otf') 
+
+}
+@font-face {
+  font-family: 'bebas';
+  src: url('../../BebasNeue-Regular.otf') 
+
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+body{
+  height: 100%;
+  width: 100%;
+  overflow-x: hidden;
+}
+
+h3,h4,h5,h2,p{
+  font-family: 'MonaSans';
+}
+
+@layer utilities {
+  .font-stretch-normal {
+    font-stretch: normal;
+  }
+  .font-stretch-condensed {
+    font-stretch: condensed;
+  }
+  .font-stretch-expanded {
+    font-stretch: expanded;
+  }
+  .font-stretch-semi-expanded {
+    font-stretch: semi-expanded;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+.linestyles{
+  border-top: solid 2px rgb(248, 178, 28);
+}
+
+.style2{
+  font-family: 'tsnf';
+}
+
+.bebas{
+  font-family: 'bebas';
+}
+
+@media (max-width: 768px) { /* Mobile */
+  .main{
+    padding: 0px 0px 0px 0px;
+    background-color: aqua;
+  }
+  .sec1{
+    height: 100%;
+    padding: 0vw;
+  }
+  .sec1main{
+    padding: 45vh 5vw 5vw 5vw;
+    z-index: 20;
+  }
+  .profimg{
+    top: 10vh;
+
+    scale: 0.7;
+    border-radius: 50%;
+    height: 250px;
+    width: 250px;
+  }
+  .sec2{
+    padding: 5vw 5vw 5vw 5vw;
+    flex-direction: column;
+    overflow: hidden;
+
+  }
+  .sec2b{
+    width: 100%;
+  }
+
+  .sec3{
+    padding: 5vw 5vw 5vw 5vw ;
+    flex-direction: column;
+    height: 140vh;
+
+  }
+
+.sec3a{
+  width: 100%;
+}
+.sec3b{
+  padding: 15vw 0vw;
+  flex-direction: column;
+  height: 100vh;
+  width: 100%;
+  gap: 10%;
+  margin: 0px;
+}
+.secb{
+  width: 100%;
+}
+
+.timepass{
+  display: none;
+}
+.sec4{
+  padding: 15vw 5vw 5vw 5vw;
+  height: 100vh;
+  
+}
+
+.sec4a{
+  height: 20vh;
+  flex-direction: column;
+}
+  .footer{
+    h4{
+      display: none;
+    }
+  }
 }

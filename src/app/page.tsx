@@ -1,103 +1,101 @@
-import Image from "next/image";
+"use client"
+import React, { useEffect, useRef } from 'react'
 
-export default function Home() {
+import { Button } from '@/components/ui/button';
+import { IoPlayForwardSharp } from "react-icons/io5";
+import Image from 'next/image';
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import GridComponent from '@/components/sections/technologies';
+import Header from '@/components/sections/header';
+import Navbar from '@/components/sections/header';
+import profpic from "../assets/profpic.jpg";
+import Squares from '@/components/sections/squares';
+import gsap from "gsap" ;
+import Sec3 from '@/components/sections/sec3';
+import Sec2 from '@/components/sections/sec2';
+import Footer from '@/components/sections/footer';
+import Sec4 from '@/components/sections/sec4';
+gsap.registerPlugin(ScrollTrigger);
+function page() {
+
+  const variable = useRef(null);
+
+  const MAIN_data_1 = ()=>{
+    return(<>
+    <div className='h-[90vh] sec1 w-full p-44 lg:p-0 overflow-hidden bg-[#f8b21c] relative'>
+      <div className='h-full w-full p-44 md:pl-12 absolute sec1main  pointer-events-none ' >
+        
+        <h2 className='text-8xl bebas text-white pointer-events-none flex'>
+        WEBSITE</h2>
+     
+        <h2  className=' text-7xl lg:text-8xl bebas text-black  pointer-events-none'>EXPERIENCE MATTERS</h2>
+        <p className='ml-44 flex justify-center items-center gap-2 z-30'> <IoPlayForwardSharp /> lets have a talk</p>
+      </div>
+     
+         
+        <Image src={profpic}  alt="profile pic" className='h-[50%] opacity-0 profimg w-75 brightness-125 rounded-b-full rounded-t-full z-30 absolute right-10 bottom-45' />
+
+        <div className="absolute inset-0 z-0">
+        <Squares squareSize={120} borderColor="#ffffff" speed={0.1} direction="right" />
+      </div>
+     
+     </div>
+      <Sec2/>
+      
+     <div className='h-[10vh] bg-[#f8f8f8] timepass'></div>
+      <Sec3/>
+     <div className='h-[20vh] lg:h-[10vh] bg-[#f8f8f8] timepass'></div>
+     <Sec4/></>)
+  }
+
+  useEffect(() => {
+    gsap.fromTo(
+      ".profimg",
+      { opacity: 0, rotateY: 180 }, // Start flipped and hidden
+      { opacity: 1, rotateY: 0, duration: 1.5, ease: "power2.out" } // Smooth flip-in animation
+    );
+   
+
+
+    const handleMouseMove = (e) => {
+      const { clientX, clientY } = e;
+      const moveX = (clientX - window.innerWidth / 2) * 0.01;
+      const moveY = (clientY - window.innerHeight / 2) * 0.01;
+
+      gsap.to(".profimg", {
+        x: moveX,
+        y: moveY,
+        duration: 0.3,
+        ease: "power2.out",
+      });
+     
+
+    };
+
+    window.addEventListener("mousemove", handleMouseMove);
+    return () => {
+      window.removeEventListener("mousemove", handleMouseMove);
+    };
+  }, []);
+
+
+  
+
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm/6 text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-[family-name:var(--font-geist-mono)] font-semibold">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
+    <div className='h-[100vh] w-full overflow-x-hidden  relative ' ref={variable}>
+    {/*<div className='h-12 z-20 bg-[#ffff] w-full flex justify-between items-center px-15 fixed'>
+     <h1>SA</h1>
+    </div>*/}
+    <Navbar/>
+    
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
-        </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+    <div className='h-full w-full px-15 py-10 main '>
+     <MAIN_data_1/>
     </div>
-  );
+    <Footer/>
+    </div>
+
+  )
 }
+
+export default page
