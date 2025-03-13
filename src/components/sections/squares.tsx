@@ -7,8 +7,7 @@ const Squares = ({
   borderColor = "#f8b21c",
   squareSize = 40,
   hoverFillColor = "#f8b21c",
-  children
-}: Readonly<{ children: React.ReactNode }>) => {
+}) => {
   const canvasRef = useRef(null);
   const requestRef = useRef(null);
   const numSquaresX = useRef(0);
@@ -134,7 +133,7 @@ const Squares = ({
 
   return (
     <canvas ref={canvasRef} className="w-full h-full border-none block z-0">
-      <div className="p-44">{children}</div>
+      <div className="p-44"></div>
     </canvas>
   );
 };
