@@ -1,7 +1,7 @@
-import type { NextConfig } from "next";
-
-const nextConfig: NextConfig = {
-  /* config options here */
+/** @type {import('next').NextConfig} */
+const nextConfig = {
+  experimental: { appDir: true }, // Ensure App Router is enabled
+  output: "standalone", // Needed for deployment
 };
 
-export default nextConfig;
+module.exports = nextConfig;
