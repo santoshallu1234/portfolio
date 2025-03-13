@@ -57,7 +57,7 @@ function page() {
    
 
 
-    const handleMouseMove = (e) => {
+    const handleMouseMove = (e:any) => {
       const { clientX, clientY } = e;
       const moveX = (clientX - window.innerWidth / 2) * 0.01;
       const moveY = (clientY - window.innerHeight / 2) * 0.01;
