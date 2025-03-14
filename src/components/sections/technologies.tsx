@@ -8,7 +8,7 @@ import img6 from "../../assets/mongodb.svg";
 import img7 from "../../assets/langchain.svg";
 import img8 from "../../assets/github.png";
 import img9 from "../../assets/next.svg";
-import img10 from "../../assets/Redis_logo.svg";
+import img10 from "../../assets/groq.svg";
 import img11 from "../../assets/docker.svg";
 import img12 from "../../assets/tailwind.svg";
 import img13 from "../../assets/expologo.svg";

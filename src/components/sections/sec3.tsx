@@ -1,3 +1,4 @@
+"use client"
 import React from 'react'
 import webpageimg from "../../assets/User-Experience-Design.svg";
 import clickimg from "../../assets/usability-testing.svg";
@@ -5,9 +6,15 @@ import heartpenimg from "../../assets/visual-design.svg";
 import reactimg from "../../assets/Research-and-Strategy.svg";
 import Image from 'next/image';
 function Sec3() {
+
+    const element = document.querySelector(".target-class");
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+    }
+  
   return (
     <>
-    <div className='h-[40vh]  w-full pl-56 flex sec3 bg-[#f8f8f8]'>
+    <div id='target-class' className='h-[40vh]  w-full pl-56 flex sec3 bg-[#f8f8f8]'>
 
 <div  className=' sec3a py-10 pr-10 w-[30%] flex flex-col relative justify-center  linestyle '>
 

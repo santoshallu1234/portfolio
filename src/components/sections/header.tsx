@@ -20,7 +20,7 @@ export default function Navbar() {
           <Link href="#aboutme" className="text-gray-700 hover:text-black">
             About Me
           </Link>
-          <Link href="#skills" className="text-gray-700 hover:text-black">
+          <Link href="#target-section" scroll={false} className="text-gray-700 hover:text-black">
             Skills
           </Link>
           <Link href="#projects" className="text-gray-700 hover:text-black">
@@ -51,9 +51,9 @@ export default function Navbar() {
           <Link href="#skills" className="text-lg font-medium" onClick={() => setIsOpen(false)}>
             Skills
           </Link>
-          <Link href="#projects" className="text-lg font-medium" onClick={() => setIsOpen(false)}>
+          {/*<Link href="#projects" className="text-lg font-medium" onClick={() => setIsOpen(false)}>
             Projects
-          </Link>
+          </Link>*/}
           <Link href="#contact" className="text-lg font-medium" onClick={() => setIsOpen(false)}>
             Contact
           </Link>
