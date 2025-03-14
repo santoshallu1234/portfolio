@@ -45,7 +45,7 @@ export default function Navbar() {
             isOpen ? "translate-x-0" : "translate-x-full"
           } md:hidden`}
         >
-          <Link href="#about" className="text-lg font-medium" onClick={() => setIsOpen(false)}>
+          <Link href="#aboutme" className="text-lg font-medium" onClick={() => setIsOpen(false)}>
             About Me
           </Link>
           <Link href="#skills" className="text-lg font-medium" onClick={() => setIsOpen(false)}>

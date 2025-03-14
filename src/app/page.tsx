@@ -33,14 +33,14 @@ function page() {
       </div>
      
          
-        <Image src={profpic}  alt="profile pic" className='h-[50%] opacity-0 profimg w-75 brightness-125 rounded-b-full rounded-t-full z-30 absolute right-10 bottom-45' />
+        <Image src={profpic}  alt="profile pic" className='h-[50%] opacity-1 profimg w-75 brightness-125 rounded-b-full rounded-t-full z-30 absolute right-10 bottom-45' />
 
         <div className="absolute inset-0 z-0">
         <Squares squareSize={120} borderColor="#ffffff" speed={0.1} direction="right" />
       </div>
      
      </div>
-      <Sec2/>
+      <Sec2 />
       
      <div className='h-[10vh] bg-[#f8f8f8] timepass'></div>
       <Sec3/>
@@ -51,7 +51,7 @@ function page() {
   useEffect(() => {
     gsap.fromTo(
       ".profimg",
-      { opacity: 0, rotateY: 180 }, // Start flipped and hidden
+      { opacity: 1, rotateY: 180 }, // Start flipped and hidden
       { opacity: 1, rotateY: 0, duration: 1.5, ease: "power2.out" } // Smooth flip-in animation
     );
    

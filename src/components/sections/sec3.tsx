@@ -14,7 +14,7 @@ function Sec3() {
 <h2 className='font-stretch-condensed text-7xl  before:absolute before:top-0 before:left-0 before:w-1/4 before:h-1 before:border-t-4 before:border-[#f8b21c] '> WHAT </h2>
 <h2  className='font-stretch-condensed text-7xl BeachBar-Regular  '>I DO</h2>
 </div>
-<div className='flex sec3b justify-between gap-15 items-center py-10 px-60 ml-[-15%] w-[85%] bg-[#f8b21c] '>
+<div className='flex sec3b justify-between gap-15 items-center py-10 px-60 ml-[-15%] md:px-20 w-[85%] bg-[#f8b21c] '>
      <div className='flex flex-col  items-center'>
        <Image src={reactimg}  alt="react " />
        <h2>Android</h2>
